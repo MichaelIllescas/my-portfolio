@@ -1,0 +1,143 @@
+:root {
+  --color-bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* fondo frío profesional */
+  --color-primary: #00bcd4;      /* azul frío */
+  --color-primary-dark: #0097a7; /* variante más oscura */
+  --color-secondary: #5e72e4;    /* azul violáceo elegante */
+  --color-accent: #26c6da;       /* cyan suave para destacar */
+  --color-dark: #1c1f2b;         /* gris azulado profundo */
+  --color-light: #f1f3f5;        /* gris claro cálido, no blanco puro */
+  --color-muted: #a0aec0;        /* gris azulado tenue */
+  --color-border: #3e4e5e;       /* gris frío para bordes */
+}
+  
+  /* Aplicación general */
+  body {
+    background: var(--color-bg)!important;
+    color: var(--color-light)!important;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Títulos */
+  h1, h2, h3, h4, h5 {
+    color: var(--color-dark);
+  }
+  
+  /* Enlaces */
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--color-primary-dark);
+    text-decoration: none;
+  }
+  
+  /* Botones personalizados */
+  .btn-primary {
+    background-color: var(--color-primary-dark) !important;
+    border-color: var(--color-accent);
+  }
+  .btn-primary:hover {
+    background-color: var(--color-muted);
+    border-color: var(--color-primary-dark);
+  }
+  
+  /* Cards */
+  .card {
+    border: 1px solid var(--color-border) !important;
+    background-color: var(--color-dark) !important;
+    color: var(--color-light) !important;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: var(--color-dark) !important;
+  }
+  .navbar .nav-link {
+    color: var(--color-light) !important;
+  }
+  .navbar .nav-link.active {
+    color: var(--color-accent) !important;
+  }
+  
+  /* Footer o sección final (si tenés) */
+  footer {
+    background-color: var(--color-dark);
+    color: var(--color-muted);
+    padding: 1rem;
+    text-align: center;
+  }
+  
+
+  .logo{
+    border-radius: 10px;
+
+  }
+
+  .text-home-secondary{
+    color: var(--color-accent) !important;
+  }
+
+  .home-section , .about-section, .skills-container , .project-section, .contact-container{
+    background-color: rgba(255, 255, 255, 0.02); /* sutil fondo transparente */
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15); /* sombra suave */
+  
+  }
+  .about-section{
+    padding: 30px;
+  }
+  .social-sidebar {
+    z-index: 1000;
+  }
+  
+  .social-sidebar a,
+  .social-sidebar-mobile a {
+    color: #ffffffcc;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 20px;
+  }
+  
+  .social-sidebar a:hover,
+  .social-sidebar-mobile a:hover {
+    color: var(--color-accent);
+    transform: scale(1.2);
+  }
+  
+  .social-sidebar i,
+  .social-sidebar-mobile i {
+    font-size: 40px;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-sidebar i:hover,
+  .social-sidebar-mobile i:hover {
+    transform: translateY(-4px);
+  }
+  
+  @media (max-width: 767.98px) {
+    .with-social-bottom {
+      padding-bottom: 60px; /* Altura similar a la barra fija */
+    }
+
+  }
+  
+  .collapsible-section {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+  }
+  
+  .collapsible-section.expanded {
+    max-height: 1000px; /* altura máxima estimada, ajustable */
+    opacity: 1;
+  }
+
+
+  .text-justify {
+    text-align: justify;
+  }
