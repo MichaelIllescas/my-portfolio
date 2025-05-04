@@ -3,10 +3,10 @@ import springSecurityLogo from "../assets/img/tecnologies-logos/spring-security.
 
 const technologies = {
   backend: {
-    title: "🛠️ Backend",
+    title: "🛠️ Desarrollo Backend con Java y Spring",
     description:
-      "Diseño y desarrollo de APIs RESTful con Java y Spring Boot, implementación de seguridad con Spring Security y JWT, persistencia de datos con JPA y gestión de bases de datos MySQL. Además, desarrollo de aplicaciones web con renderizado del lado del servidor (SSR) utilizando el motor de plantillas Thymeleaf o JSP para la generación dinámica de vistas.",
-    items: [
+    "Desarrollo de APIs RESTful escalables y seguras utilizando Java con Spring Boot. Implementación de lógica de negocio desacoplada y estructurada en capas (controlador, servicio, repositorio), autenticación y autorización robusta con Spring Security y JWT, y persistencia eficiente de datos con Spring Data JPA sobre MySQL. Aplicación de buenas prácticas como validación de datos, manejo centralizado de errores y principios SOLID. Generación de vistas dinámicas en SSR utilizando Thymeleaf o JSP cuando el proyecto lo requiere.",
+      items: [
       {
         name: "Java",
         svg: (
@@ -101,10 +101,10 @@ const technologies = {
     ],
   },
   frontend: {
-    title: "🎨 Frontend",
+    title: "🎨 Desarrollo Frontend moderno y responsivo",
     description:
-      "Desarrollo de interfaces modernas, dinámicas y responsivas utilizando JavaScript con React, siguiendo el enfoque de aplicaciones de una sola página (SPA). Uso de HTML5 y CSS3 para la estructura y estilos, junto con Bootstrap para un diseño consistente, adaptable y componentes reutilizables.",
-    items: [
+    "Desarrollo de interfaces interactivas y responsivas utilizando React con enfoque SPA (Single Page Application). Implementación de componentes reutilizables, formularios controlados, hooks personalizados y consumo eficiente de APIs REST. Uso de HTML5 y CSS3 junto a Bootstrap para lograr estructuras semánticas, estilos adaptativos y una experiencia de usuario coherente en múltiples dispositivos.",
+      items: [
       {
         name: "HTML5",
         svg: (
@@ -160,13 +160,24 @@ const technologies = {
         ),
         link: "https://reactjs.org/",
       },
+      {
+        name: "Axios",
+        svg: (
+          <img
+            src="https://axios-http.com/assets/logo.svg"
+            alt="Axios"
+            style={{ width: "32px", height: "32px" }}
+          />
+        ),
+        link: "https://axios-http.com/",
+      }
     ],
   },
   devops: {
-    title: "⚙️ DevOps y Herramientas",
+    title: "⚙️ DevOps y Herramientas de Desarrollo Colaborativo",
     description:
-      "Control de versiones con Git y GitHub, integración de Git Flow para flujos de trabajo colaborativos, uso básico de contenedores Docker.",
-    items: [
+    "Manejo fluido de herramientas para control de versiones, trabajo en equipo, flujo de desarrollo colaborativo y despliegue de aplicaciones. Experiencia con Git y GitHub en equipos, gestión de ramas con Git Flow, y uso básico de Docker para contenerización y despliegue eficiente.",
+      items: [
       {
         name: "Git",
         icon: "bi-git",
@@ -195,40 +206,44 @@ const technologies = {
   },
 };
 const softSkills = [
-  "Responsabilidad",
-  "Proactividad",
-  "Aprendizaje ágil",
-  "Trabajo en equipo",
-  "Comunicación efectiva",
-  "Adaptabilidad",
+  "Responsabilidad y compromiso con los objetivos del proyecto",
+  "Proactividad para anticipar necesidades y proponer mejoras",
+  "Capacidad de aprendizaje ágil y adaptación a nuevas tecnologías",
+  "Trabajo en equipo con enfoque colaborativo y comunicación constante",
+  "Comunicación efectiva para transmitir ideas técnicas de forma clara",
+  "Flexibilidad ante cambios de requerimientos o contexto",
+  "Gestión del tiempo para cumplir con plazos y prioridades",
+  "Resolución de problemas de forma analítica y autónoma",
 ];
 
 const goodPractices = [
-  "Arquitectura Cliente-Servidor",
-  "Arquitectura Monolítica",
-  "Arquitectura en Capas (presentación, servicio, repositorio)",
-  "Microservicios (enfoque modular)",
-  "MVC (Model-View-Controller)",
-  "Patrón DTO (Data Transfer Object)",
-  "Principios SOLID",
-  "Inyección de Dependencias (DI)",
-  "Separación de responsabilidades",
-  "Validación de datos (Spring Validation)",
-  "Manejo centralizado de errores y excepciones",
+  "Separación de responsabilidades a través de una arquitectura en capas (Controlador, Servicio, Repositorio)",
+  "Aplicación de principios SOLID para lograr código mantenible, extensible y testable",
+  "Uso de DTOs (Data Transfer Object) para desacoplar la capa de presentación del dominio",
+  "Arquitectura Cliente-Servidor con backend desacoplado del frontend",
+  "Patrón MVC (Model-View-Controller) para organizar la lógica de presentación",
+  "Inyección de dependencias (DI) para facilitar el testeo y la modularidad",
+  "Validación de datos robusta con Spring Validation y anotaciones personalizadas",
+  "Gestión centralizada de errores y excepciones para una experiencia de usuario coherente",
+  "Uso de arquitectura monolítica modular para escalar funcionalidades de forma ordenada",
+  "Aplicación de enfoque modular orientado a microservicios (diseño desacoplado y reutilizable)",
+  "Estrategias de versionado y documentación de APIs REST con Swagger (OpenAPI)",
 ];
 
 const realExperience = [
-  "Diseño y desarrollo de APIs RESTful con Java y Spring Boot",
-  "Autenticación y autorización con Spring Security y JWT",
-  "Renderizado del lado del servidor con Thymeleaf (SSR)",
-  "Persistencia de datos con Spring Data JPA y Hibernate",
-  "Construcción de aplicaciones SPA con React y consumo de APIs mediante Axios",
-  "Diseño responsivo y uso de Bootstrap para componentes reutilizables",
-  "Modelado de base de datos y consultas SQL en MySQL",
-  "Versionado y trabajo colaborativo con Git y GitHub (Git Flow)",
-  "Despliegue de frontend en Hostinger y backend en VPS",
-  "Aplicación de metodología Scrum para organización del trabajo",
-  "Documentación de APIs con Swagger (OpenAPI)",
+  "Diseño e implementación de APIs RESTful robustas con Java y Spring Boot, siguiendo principios SOLID y patrón MVC.",
+  "Integración de seguridad en aplicaciones web con Spring Security, JWT, y control de acceso por roles.",
+  "Persistencia de datos mediante Spring Data JPA e Hibernate, con modelado eficiente en MySQL.",
+  "Renderizado del lado del servidor (SSR) con Thymeleaf y JSP para generación dinámica de vistas.",
+  "Desarrollo de aplicaciones SPA con React, integrando formularios controlados, hooks personalizados y consumo de APIs con Axios.",
+  "Estilado responsivo y diseño UI/UX profesional con Bootstrap, CSS personalizado y estructura grid.",
+  "Gestión de versiones con Git y GitHub, implementación de Git Flow para trabajo colaborativo en equipos.",
+  "Despliegue en entornos reales: backend Java en VPS (Linux) y frontend React en Hostinger, con configuración de DNS y subdominios.",
+  "Uso de Docker para empaquetado y despliegue de servicios en producción.",
+  "Documentación profesional de APIs con Swagger (OpenAPI), incluyendo seguridad, modelos y endpoints REST.",
+  "Manejo de validaciones personalizadas con Spring Validation y control centralizado de errores.",
+  "Desarrollo de funcionalidades de facturación, generación de reportes PDF y gráficos estadísticos en tiempo real.",
+  "Aplicación de metodología Scrum para planificación y desarrollo incremental en proyectos reales.",
 ];
 
 export default function SkillsPage() {
@@ -242,7 +257,8 @@ export default function SkillsPage() {
     <button
       className={`btn w-100 text-start mb-2 rounded border d-flex justify-content-between align-items-center ${
         openSection === id ? "btn-primary" : "btn-outline-light"
-      }`} style={{ minHeight:"55px", transition:"all .7s ease"}}
+      }`}
+      style={{ minHeight: "55px", transition: "all .7s ease" }}
       onClick={() => toggleSection(id)}
     >
       <span>{title}</span>
@@ -255,17 +271,31 @@ export default function SkillsPage() {
   );
 
   return (
-    <section className=" skills-container p-1 pt-5 mb-4">
+    <section className=" skills-container p-1 pt-5 mb-4" id="habilidades">
       <div
-        className="container-fluid "
+        className="container-fluid pb-5 pt-5 "
         style={{ maxWidth: "900px" }}
         data-aos="fade-left"
       >
-        <h2 className="mb-5 text-center">💼 Mis Habilidades Profesionales</h2>
+        <h1 className="mb-5 text-center pb-1">
+          💼 Mis Habilidades Profesionales
+        </h1>
+
+        <p className="text-light text-center mb-4 ">
+          Me encuentro en constante evolución como profesional del software.
+          Busco siempre incorporar nuevas tecnologías, mejorar mis buenas
+          prácticas y adaptarme a los desafíos de cada proyecto, combinando una
+          base sólida en desarrollo backend con habilidades frontend y
+          metodologías modernas.
+        </p>
+        <p className="text-light text-center mt-3">
+          <strong>Stack principal:</strong> Java, Spring Boot, Spring Security,
+          JPA, MySQL, React, Bootstrap, Docker.
+        </p>
 
         {Object.entries(technologies).map(([key, group]) => (
           <div key={key} className="mb-4 ">
-            <SectionButton id={key} title={group.title}  />
+            <SectionButton id={key} title={group.title} />
             <div
               className={`collapsible-section ${
                 openSection === key ? "expanded" : ""
@@ -275,7 +305,6 @@ export default function SkillsPage() {
               <div className="px-3 py-2 bg-dark bg-opacity-10 rounded">
                 <p className="text-light text-justify">{group.description}</p>
                 <div className="row row-cols-2 row-cols-md-5 g-3 text-center">
-
                   {group.items.map((tech) => (
                     <div key={tech.name} className="col">
                       <a
@@ -310,7 +339,8 @@ export default function SkillsPage() {
         <div className="mb-4">
           <SectionButton
             id="goodPractices"
-            title="📐 Buenas Prácticas y Arquitectura" className
+            title="📐 Buenas Prácticas y Arquitectura"
+            className
           />
           <div
             className={`collapsible-section  ${
@@ -319,13 +349,17 @@ export default function SkillsPage() {
             style={{ transition: "all .7s ease" }}
           >
             <div className="px-3 py-2 bg-dark bg-opacity-10 rounded">
+            <p className="text-light text-justify">
+  Estas prácticas reflejan mi enfoque en escribir código limpio, escalable y preparado para producción, apoyándome en patrones de arquitectura modernos y principios de ingeniería de software.
+</p>
+
               <ul className="list-group list-group-flush">
                 {goodPractices.map((practice, index) => (
                   <li
                     key={index}
                     className="list-group-item bg-transparent text-light"
                   >
-                    {practice}
+                    ✅ {practice}
                   </li>
                 ))}
               </ul>
@@ -369,8 +403,9 @@ export default function SkillsPage() {
           >
             <div className="px-3 py-2 bg-dark bg-opacity-10 rounded">
               <p className="text-light text-justify">
-                Aptitudes personales que potencian mi trabajo en equipo y
-                adaptación:
+                Competencias interpersonales que potencian mi rendimiento
+                profesional y mi integración efectiva en equipos de trabajo
+                multidisciplinarios:
               </p>
               <ul className="list-group list-group-flush">
                 {softSkills.map((skill, index) => (

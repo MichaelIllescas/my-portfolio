@@ -4,15 +4,22 @@
   --color-primary-dark: #0097a7; /* variante más oscura */
   --color-secondary: #5e72e4;    /* azul violáceo elegante */
   --color-accent: #26c6da;       /* cyan suave para destacar */
-  --color-dark: #1c1f2b;         /* gris azulado profundo */
+  --color-dark: #202123d8;         /* gris azulado profundo */
   --color-light: #f1f3f5;        /* gris claro cálido, no blanco puro */
   --color-muted: #a0aec0;        /* gris azulado tenue */
   --color-border: #3e4e5e;       /* gris frío para bordes */
 }
+html{
+  scroll-behavior: smooth;
+}
   
   /* Aplicación general */
   body {
-    background: var(--color-bg)!important;
+    background-image: url('./assets/img/fondo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center center;
+    background-attachment: fixed; 
     color: var(--color-light)!important;
     font-family: 'Segoe UI', Roboto, sans-serif;
     margin: 0;
@@ -47,7 +54,7 @@
   /* Cards */
   .card {
     border: 1px solid var(--color-border) !important;
-    background-color: var(--color-dark) !important;
+    background-color: var(--color-bg) !important;
     color: var(--color-light) !important;
   }
   
@@ -81,9 +88,9 @@
   }
 
   .home-section , .about-section, .skills-container , .project-section, .contact-container{
-    background-color: rgba(255, 255, 255, 0.02); /* sutil fondo transparente */
+   background-color: var(--color-dark) !important;
     border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.15); /* sombra suave */
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15) inset; /* sombra suave */
   
   }
   .about-section{
@@ -123,6 +130,9 @@
       padding-bottom: 60px; /* Altura similar a la barra fija */
     }
 
+    footer{
+      margin-bottom: 50px;
+    }
   }
   
   .collapsible-section {
@@ -141,3 +151,36 @@
   .text-justify {
     text-align: justify;
   }
+
+
+  .section-home {
+    margin-top: 100px;
+    margin-bottom: 20px;
+  }
+  section {
+    scroll-margin-top: 100px; /* Altura del navbar fijo */
+  }
+
+  .invalid-feedback {
+    color: #ea9a9a !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+  }
+  
+
+  .is-invalid {
+    border-color: #ff4d4f !important;
+  }
+  
+
+
+  /* A partir de pantallas grandes (lg ≥ 992px) */
+@media (min-width: 992px) {
+  .section-home {
+    min-height: 80vh;
+    
+  }
+  h1{
+    margin-bottom: 1000px;
+  }
+}

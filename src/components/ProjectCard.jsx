@@ -1,75 +1,57 @@
-import TechIcon from "../components/TechIcons";
-
+import React from "react";
+import '../styles/ProjectCardAnimated.css'
 const ProjectCard = ({
   title,
+  tag,
+  date,
   description,
   image,
-  githubUrl,
   frontendUrl,
   backendUrl,
+  githubUrl,
   demoUrl,
-  techList = [],
+  techList,
+  isOpen,
+  onToggle,
 }) => {
   return (
-    <div className="col" style={{  width: "100%", maxWidth: "400px", margin: "30px auto"}}>
-      <div className="card h-100 shadow-sm rounded-4" style={{minHeight:"700px"}}>
-        <img
-          src={image}
-          className="card-img-top rounded-top-4"
-          alt={title}
-          style={{ height: "250px", objectFit: "contain" }}
-        />
-        <div className="card-body d-flex flex-column">
-          <h3 className="card-title fw-bold">{title}</h3>
-          <p className="card-text small flex-grow-1 text-justify" >{description}</p>
-          <div className="d-flex flex-wrap gap-2 mt-2">
-            {techList.map((tech) => (
-              <TechIcon key={tech} tech={tech} />
-            ))}
-          </div>
+    <div className={`card h-100 shadow-sm border-0 project-card ${isOpen ? 'expanded' : ''}`}>
+      <img src={image} alt={title} className="card-img-top " style={{ minHeight: "190px", objectFit: "cover" }} />
+
+      <div className="card-body d-flex flex-column justify-content-between">
+        <div>
+          <h5 className="card-title">{title}</h5>
+          <small className="text-white"> <span className="btn text-white btn-tag">{tag}</span> • {date}</small>
         </div>
 
-        <div className="card-footer bg-white border-0 d-flex justify-content-end gap-2 flex-wrap">
-          {frontendUrl ? (
-            <a
-              href={frontendUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-outline-primary btn-sm rounded-pill"
-            >
-              Frontend
-            </a>
-          ) : githubUrl && (
-            <a
-              href={githubUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-outline-primary btn-sm rounded-pill"
-            >
-              GitHub
-            </a>
-          )}
+        {isOpen && (
+          <div>
+            <p className="card-text mt-2">{description}</p>
 
-          {backendUrl && (
-            <a
-              href={backendUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-outline-secondary btn-sm rounded-pill"
-            >
-              Backend
-            </a>
-          )}
-          {demoUrl && (
-            <a
-              href={demoUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-primary btn-sm rounded-pill"
-            >
-              Ver sitio
-            </a>
-          )}
+            {techList && (
+              <div className="mb-2 ">
+                <strong>Tecnologías:</strong>
+                <ul className="list-inline mt-1">
+                  {techList.map((tech, i) => (
+                    <li key={i} className="list-inline-item badge bg-secondary me-1">{tech}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            <div className="d-flex flex-wrap gap-2 mt-2 ">
+              {frontendUrl && <a href={frontendUrl} target="_blank" rel="noopener noreferrer" className="a btn btn-sm btn-outline-dark">Frontend</a>}
+              {backendUrl && <a href={backendUrl} target="_blank" rel="noopener noreferrer" className="a btn btn-sm btn-outline-dark">Backend</a>}
+              {githubUrl && <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="a btn btn-sm btn-outline-dark">GitHub</a>}
+              {demoUrl && <a href={demoUrl} target="_blank" rel="noopener noreferrer" className=" a btn btn-sm btn-outline-success">Demo</a>}
+            </div>
+          </div>
+        )}
+
+        <div className="mt-3 text-center">
+          <button className="btn btn-sm btn-primary" onClick={onToggle}>
+            {isOpen ? "Ver menos" : "Ver más"}
+          </button>
         </div>
       </div>
     </div>

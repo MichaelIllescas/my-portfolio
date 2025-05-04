@@ -1,0 +1,110 @@
+:root {
+  --color-bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* fondo frío profesional */
+  --color-primary: #00bcd4;      /* azul frío */
+  --color-primary-dark: #0097a7; /* variante más oscura */
+  --color-secondary: #5e72e4;    /* azul violáceo elegante */
+  --color-accent: #26c6da;       /* cyan suave para destacar */
+  --color-dark: #202123d8;         /* gris azulado profundo */
+  --color-light: #f1f3f5;        /* gris claro cálido, no blanco puro */
+  --color-muted: #a0aec0;        /* gris azulado tenue */
+  --color-border: #3e4e5e;       /* gris frío para bordes */
+}
+
+.project-card {
+    width: 100%;
+    max-width: 400px;
+    margin: 30px auto;
+    perspective: 1000px;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    padding-bottom: 10px;
+    min-height: 350px;
+
+   
+  }
+  
+  .project-card-inner {
+    position: relative;
+    height: 100%;
+    transition: transform 0.4s ease;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364)
+  }
+  
+  .project-card.expanded .project-card-inner {
+    transform: scale(1.02);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  .project-card-front {
+    position: relative;
+    text-align: center;
+    padding: 1rem;
+    background:linear-gradient(135deg, #0f2027, #203a43, #2c5364)
+  }
+  
+  .project-image {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 0.75rem;
+  }
+  
+  .project-info {
+    margin-top: 1rem;
+  }
+  
+  .project-card-back {
+    background:linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    border-top: 1px solid #ddd;
+    display: none;
+    transition: all 0.4s ease;
+  }
+  
+  .project-card.expanded .project-card-back {
+    display: block;
+  }
+  
+  .project-card-back p,
+  .project-card-back ul,
+  .project-card-back .btn {
+    opacity: 1;
+    transform: translateY(0);
+    transition: none;
+  }
+  
+  .toggle-expand {
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  .toggle-expand:hover {
+    color: #0056b3;
+  }
+  
+  @media (max-width: 576px) {
+    .project-card {
+      margin: 20px auto;
+    }
+  }
+
+  .project-card {
+    transition: all 0.3s ease-in-out;
+    max-height: 300px;
+    overflow: hidden;
+  }
+  
+  .project-card.expanded {
+    max-height: 1000px;
+  }
+
+  .btn-tag{
+    background: #000 !important;
+    font-size: small !important;
+    padding: 2px 5px !important;
+  }
+
+  .a{
+    background-color: #1673aa !important;
+    color: wheat !important;
+  }

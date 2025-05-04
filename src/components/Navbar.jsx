@@ -2,39 +2,36 @@ import { Link, NavLink } from 'react-router-dom';
 import logo from '../assets/img/logo.png';
 
 function Navbar() {
-  const handleNavLinkClick = () => {
+  const handleNavLinkClick = (sectionId) => {
     const navbar = document.getElementById('navbarNav');
 
     if (navbar && navbar.classList.contains('show')) {
       const fullHeight = navbar.scrollHeight;
-
-      // Fijar la altura actual para poder animar
       navbar.style.height = `${fullHeight}px`;
-      navbar.style.transition = 'z 0.2s ease';
+      navbar.style.transition = 'height 0.2s ease';
       navbar.style.overflow = 'hidden';
-
-      // Forzar reflow (es necesario para que funcione la animación)
       void navbar.offsetHeight;
-
-      // Animar hacia height: 0
       navbar.style.height = '0px';
 
-      // Después de la animación, limpiar estilos y clases
       setTimeout(() => {
         navbar.classList.remove('show');
         navbar.style.height = '';
-        
         navbar.style.overflow = '';
-      }, 400); // debe coincidir con el tiempo de transición
+      }, 400);
+    }
+
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div className="container" data-aos="fade-left">
-        <Link className="navbar-brand" to="/">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style={{width:"100vw"}}>
+      <div className="container">
+        <span className="navbar-brand" role="button" onClick={() => handleNavLinkClick('inicio')}>
           <img src={logo} alt="Logo" height="70" className="logo" />
-        </Link>
+        </span>
         <button
           className="navbar-toggler"
           type="button"
@@ -44,32 +41,32 @@ function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className="collapse navbar-collapse" id="navbarNav" style={{transition:"all .2s ease"}}>
+        <div className="collapse navbar-collapse" id="navbarNav" style={{ transition: "all .2s ease" }}>
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <NavLink className="nav-link" to="/" onClick={handleNavLinkClick}>
+              <span className="nav-link" role="button" onClick={() => handleNavLinkClick('inicio')}>
                 Inicio
-              </NavLink>
+              </span>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/about" onClick={handleNavLinkClick}>
+              <span className="nav-link" role="button" onClick={() => handleNavLinkClick('sobre-mi')}>
                 Sobre mí
-              </NavLink>
+              </span>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/projects" onClick={handleNavLinkClick}>
+              <span className="nav-link" role="button" onClick={() => handleNavLinkClick('proyectos')}>
                 Proyectos
-              </NavLink>
+              </span>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/skills" onClick={handleNavLinkClick}>
+              <span className="nav-link" role="button" onClick={() => handleNavLinkClick('habilidades')}>
                 Habilidades
-              </NavLink>
+              </span>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/contact" onClick={handleNavLinkClick}>
+              <span className="nav-link" role="button" onClick={() => handleNavLinkClick('contacto')}>
                 Contacto
-              </NavLink>
+              </span>
             </li>
           </ul>
         </div>
@@ -77,5 +74,6 @@ function Navbar() {
     </nav>
   );
 }
+
 
 export default Navbar;
