@@ -1,4 +1,6 @@
 import React from "react";
+import { FaGithub, FaGlobe, FaLaptopCode, FaServer } from "react-icons/fa";
+import '../styles/cards.css'
 import '../styles/ProjectCardAnimated.css'
 const ProjectCard = ({
   title,
@@ -15,42 +17,87 @@ const ProjectCard = ({
   onToggle,
 }) => {
   return (
-    <div className={`card h-100 shadow-sm border-0 project-card ${isOpen ? 'expanded' : ''}`}>
-      <img src={image} alt={title} className="card-img-top " style={{ minHeight: "190px", objectFit: "cover" }} />
-
-      <div className="card-body d-flex flex-column justify-content-between">
+ <div className={`card project-card shadow-sm border-0 ${isOpen ? "expanded" : ""}`}>
+  <img
+    src={image}
+    alt={title}
+    className="card-img-top"
+  />
+  <div className="card-body d-flex flex-column">
         <div>
-          <h5 className="card-title">{title}</h5>
-          <small className="text-white"> <span className="btn text-white btn-tag">{tag}</span> • {date}</small>
+          <h5 className="card-title fw-bold">{title}</h5>
+          <small className="text-muted">
+            <span className="badge bg-primary me-2 ">{tag}</span>
+            <span className="text-white"> {date}</span> 
+         
+          </small>
         </div>
 
+        {/* Contenido expandido */}
         {isOpen && (
           <div>
-            <p className="card-text mt-2">{description}</p>
+            <p className="card-text mt-3">{description}</p>
 
             {techList && (
-              <div className="mb-2 ">
+              <div className="mb-3">
                 <strong>Tecnologías:</strong>
-                <ul className="list-inline mt-1">
+                <div className="d-flex flex-wrap gap-2 mt-2">
                   {techList.map((tech, i) => (
-                    <li key={i} className="list-inline-item badge bg-secondary me-1">{tech}</li>
+                    <span key={i} className="badge bg-secondary">{tech}</span>
                   ))}
-                </ul>
+                </div>
               </div>
             )}
 
-            <div className="d-flex flex-wrap gap-2 mt-2 ">
-              {frontendUrl && <a href={frontendUrl} target="_blank" rel="noopener noreferrer" className="a btn btn-sm btn-outline-dark">Frontend</a>}
-              {backendUrl && <a href={backendUrl} target="_blank" rel="noopener noreferrer" className="a btn btn-sm btn-outline-dark">Backend</a>}
-              {githubUrl && <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="a btn btn-sm btn-outline-dark">GitHub</a>}
-              {demoUrl && <a href={demoUrl} target="_blank" rel="noopener noreferrer" className=" a btn btn-sm btn-outline-success">Demo</a>}
+            <div className="d-flex flex-wrap gap-2 mt-2">
+              {frontendUrl && (
+                <a
+                  href={frontendUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-sm a"
+                >
+                  <FaLaptopCode className="me-1 a" /> Frontend
+                </a>
+              )}
+              {backendUrl && (
+                <a
+                  href={backendUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-sm btn-outline-dark tag bg-dark text-white "
+                >
+                  <FaServer className="me-1" /> Backend
+                </a>
+              )}
+              {githubUrl && (
+                <a
+                  href={githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-sm a"
+                >
+                  <FaGithub className="me-1" /> GitHub
+                </a>
+              )}
+              {demoUrl && (
+                <a
+                  href={demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-sm btn-outline-success"
+                >
+                  <FaGlobe className="me-1" /> Demo
+                </a>
+              )}
             </div>
           </div>
         )}
 
+        {/* Botón toggle */}
         <div className="mt-3 text-center">
           <button className="btn btn-sm btn-primary" onClick={onToggle}>
-            {isOpen ? "Ver menos" : "Ver más"}
+            {isOpen ? "Ver menos ▲" : "Ver más ▼"}
           </button>
         </div>
       </div>

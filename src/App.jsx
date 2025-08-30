@@ -10,6 +10,7 @@ import SocialSidebar from "./components/SocialSidebar";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import PageLoader from "./components/PageLoader";
 
 function App() {
   useEffect(() => {
@@ -18,9 +19,10 @@ function App() {
 
   return (
     <div className="d-flex flex-column min-vh-100 with-social-bottom" id="inicio">
+       <PageLoader />
       <Navbar />
       <SocialSidebar />
-      <div className="container flex-grow-1 mt-4" data-aos="fade-up">
+      <div className="container flex-grow-1 mt-2" data-aos="fade-up">
         <Home />
         <About />
         <Projects />

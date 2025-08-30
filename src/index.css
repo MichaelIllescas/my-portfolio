@@ -24,7 +24,9 @@ html{
     font-family: 'Segoe UI', Roboto, sans-serif;
     margin: 0;
     padding: 0;
+   
   }
+ 
   
   /* Títulos */
   h1, h2, h3, h4, h5 {
@@ -99,6 +101,8 @@ html{
   .social-sidebar {
     z-index: 1000;
   }
+
+ 
   
   .social-sidebar a,
   .social-sidebar-mobile a {
@@ -106,6 +110,7 @@ html{
     text-decoration: none;
     transition: all 0.3s ease;
     padding: 20px;
+   
   }
   
   .social-sidebar a:hover,
@@ -116,7 +121,7 @@ html{
   
   .social-sidebar i,
   .social-sidebar-mobile i {
-    font-size: 40px;
+    font-size: 50px;
     transition: transform 0.3s ease;
   }
   
@@ -128,10 +133,19 @@ html{
   @media (max-width: 767.98px) {
     .with-social-bottom {
       padding-bottom: 60px; /* Altura similar a la barra fija */
+      
+    }
+    .social-sidebar-mobile   {
+      width: 100vw;
+    
+    }
+    .social-sidebar i,
+    .social-sidebar-mobile i {
+      font-size: 30px; 
     }
 
     footer{
-      margin-bottom: 50px;
+      margin-bottom: 40px;
     }
   }
   
@@ -177,10 +191,31 @@ html{
   /* A partir de pantallas grandes (lg ≥ 992px) */
 @media (min-width: 992px) {
   .section-home {
-    min-height: 80vh;
+    min-height: 90vh;
     
   }
+ 
   h1{
     margin-bottom: 1000px;
   }
+ 
+
 }
+
+
+@media screen and (max-width: 992px) {
+  .text-animated {
+    margin-top: 70px;
+    height: 150px;
+    overflow: hidden; /* evita que el contenido haga crecer el div */
+  }
+}
+
+
+
+  /* Ajustes en pantallas chicas: que no se corten ni “brinquen” */
+  @media (max-width: 576px){
+    .cta-wrap{ gap:.75rem !important; }
+    .btn-unify{ width:100%; } /* opcional: los hace a full-width en mobile */
+    .tecnologies{ flex-wrap:wrap; justify-content:center; }
+  }
