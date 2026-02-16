@@ -12,6 +12,15 @@ dist
 dist-ssr
 *.local
 
+# Environment variables (SENSIBLE)
+.env
+.env.*
+env-config.php
+
+# Email logs
+src/logs/
+src/services/logs/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

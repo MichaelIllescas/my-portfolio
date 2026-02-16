@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import { useState } from "react";
+import { FaGithub } from "react-icons/fa";
 import ProjectCard from "../components/ProjectCard";
 
 // Imágenes
@@ -11,25 +10,22 @@ import solfotofashionimage from "../assets/img/solfotofashion-image.jpeg";
 import coblanImage from "../assets/img/coblan-image.jpeg";
 import sdrp from "../assets/img/sdrp.jpeg";
 import coblanAdmin from "../assets/img/image-coblan-system-admin.png";
+import qrestImage from "../assets/img/qrest2.png";
 
 const Projects = () => {
   const [openIndex, setOpenIndex] = useState(null);
-    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const responsive = {
-    superLargeDesktop: { breakpoint: { max: 4000, min: 1400 }, items: 3 },
-    desktop: { breakpoint: { max: 1400, min: 768 }, items: 2 },
-    tablet: { breakpoint: { max: 768, min: 464 }, items: 1 },
-    mobile: { breakpoint: { max: 464, min: 0 }, items: 1 },
-  };
 
   const projects = [
+    {
+      title: "QRest - Sistema de Gestión para Restaurantes",
+      tag: "ERP",
+      date: "Diciembre 2025 - Febrero 2026",
+      description:
+        "Sistema integral para la gestión de restaurantes. Incluye administración de mesas, pedidos en tiempo real, menú digital con QR, gestión de reservas, control de personal y reportes de ventas. Arquitectura moderna con API REST.",
+      image: qrestImage,
+      githubUrl: "https://github.com/MichaelIllescas/Qrest",
+      techList: ["React", "TypeScript", "Vite", "Java 21", "Spring Boot", "Spring Data JPA", "MySQL", "WebSocket", "Swagger", "Git", "GitHub"],
+    },
     {
       title: "Coblan ERP Administrativo",
       tag: "ERP",
@@ -109,28 +105,47 @@ const Projects = () => {
 
   return (
     <section className="project-section py-5 mb-4" data-aos="fade-left" id="proyectos">
-      <h1 className="mt-3 mb-3 text-center">🚀 Proyectos destacados</h1>
-      <p className="text-center mx-auto mb-4" style={{ maxWidth: "850px" }}>
-        Cada proyecto refleja mi capacidad para{" "}
-        <strong>liderar el ciclo completo de desarrollo</strong>: desde el{" "}
-        <strong>análisis y diseño arquitectónico</strong> hasta la{" "}
-        <strong>implementación, pruebas y despliegue</strong>.  
-        Todas las soluciones están pensadas para <strong>escalabilidad, seguridad y experiencia de usuario</strong>.
-      </p>
+      {/* Hero de la sección */}
+      <div className="container mb-5">
+        <div className="row justify-content-center">
+          <div className="col-lg-8 text-center">
+            <h1 className="display-5 fw-bold mb-3" style={{color: "#ffffff"}}>
+              Proyectos Destacados
+            </h1>
+            <p className="lead mb-4" style={{color: "#a8b2c1"}}>
+              Soluciones completas que demuestran mi capacidad técnica y visión de negocio
+            </p>
+            
+            {/* Stats rápidas */}
+            <div className="row g-3 mb-4">
+              <div className="col-4">
+                <div className="stat-card p-3">
+                  <h3 style={{color: "#61dbfb"}}>8+</h3>
+                  <small style={{color: "#d1d5db"}}>Proyectos</small>
+                </div>
+              </div>
+              <div className="col-4">
+                <div className="stat-card p-3">
+                  <h3 style={{color: "#28a745"}}>3</h3>
+                  <small style={{color: "#d1d5db"}}>ERPs</small>
+                </div>
+              </div>
+              <div className="col-4">
+                <div className="stat-card p-3">
+                  <h3 style={{color: "#ffc107"}}>100%</h3>
+                  <small style={{color: "#d1d5db"}}>Full Stack</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <div className="container-fluid">
-        <Carousel
-          responsive={responsive}
-          infinite
-          autoPlay
-          autoPlaySpeed={4000}
-          arrows
-          keyBoardControl
-          pauseOnHover
-          centerMode={!isMobile}
-        >
-          {projects.map((project, index) => (
-            <div key={index} className="p-2" data-aos="fade-up">
+      {/* Grid de proyectos mejorado */}
+      <div className="container">
+        <div className="row g-4">
+          {projects.slice(0, 6).map((project, index) => (
+            <div key={index} className="col-lg-6 col-xl-4" data-aos="fade-up" data-aos-delay={index * 100}>
               <ProjectCard
                 {...project}
                 isOpen={openIndex === index}
@@ -138,8 +153,135 @@ const Projects = () => {
               />
             </div>
           ))}
-        </Carousel>
+        </div>
+        
+        {/* Call to action */}
+        <div className="text-center mt-5">
+          <p style={{color: "#a8b2c1"}} className="mb-3">
+            ¿Quieres ver más proyectos o colaborar en uno nuevo?
+          </p>
+          <div className="d-flex justify-content-center gap-3 flex-wrap">
+            <a 
+              href="https://github.com/MichaelIllescas" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="cta-btn github-btn"
+            >
+              <FaGithub className="me-2" /> Ver GitHub
+            </a>
+            <button 
+              className="cta-btn primary-btn"
+              onClick={() => {
+                const section = document.getElementById("contacto");
+                if (section) section.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Trabajemos juntos
+            </button>
+          </div>
+        </div>
       </div>
+
+      {/* Estilos CSS para los botones CTA */}
+      <style>{`
+        .cta-btn {
+          display: inline-flex;
+          align-items: center;
+          padding: 0.8rem 1.5rem;
+          border-radius: 25px;
+          font-weight: 600;
+          font-size: 1rem;
+          text-decoration: none;
+          border: none;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          background: rgba(255, 255, 255, 0.05);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .github-btn {
+          color: #ffffff;
+          background: rgba(255, 255, 255, 0.1);
+        }
+
+        .github-btn:hover {
+          color: #ffffff;
+          background: rgba(255, 255, 255, 0.15);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+          text-decoration: none;
+        }
+
+        .primary-btn {
+          color: #ffffff;
+          background: linear-gradient(135deg, #61dbfb, #0d6efd);
+          border: none;
+        }
+
+        .primary-btn:hover {
+          background: linear-gradient(135deg, #4fc3f7, #0056b3);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(97, 219, 251, 0.3);
+        }
+
+        @media (max-width: 768px) {
+          .cta-btn {
+            padding: 0.7rem 1.2rem;
+            font-size: 0.9rem;
+            width: 100%;
+            justify-content: center;
+          }
+        }
+      `}</style>
+
+      {/* Estilos CSS */}
+      <style>{`
+        .stat-card {
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 10px;
+          backdrop-filter: blur(10px);
+          transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+          transform: translateY(-3px);
+          background: rgba(255, 255, 255, 0.08);
+          border-color: rgba(97, 219, 251, 0.3);
+        }
+        
+        .stat-card h3 {
+          margin-bottom: 0.2rem;
+          font-size: 1.8rem;
+          font-weight: 700;
+        }
+        
+        .stat-card small {
+          font-size: 0.8rem;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+        
+        @media (max-width: 768px) {
+          .stat-card h3 {
+            font-size: 1.4rem;
+          }
+          .stat-card small {
+            font-size: 0.65rem;
+            letter-spacing: 0;
+          }
+        }
+        
+        @media (max-width: 400px) {
+          .stat-card h3 {
+            font-size: 1.2rem;
+          }
+          .stat-card small {
+            font-size: 0.6rem;
+          }
+        }
+      `}</style>
     </section>
   );
 };

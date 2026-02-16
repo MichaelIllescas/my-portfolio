@@ -43,14 +43,217 @@ html{
     text-decoration: none;
   }
   
-  /* Botones personalizados */
-  .btn-primary {
-    background-color: var(--color-primary-dark) !important;
-    border-color: var(--color-accent);
+  /* Botones personalizados con glassmorphism */
+  .btn {
+    border-radius: 12px !important;
+    padding: 12px 24px !important;
+    font-weight: 600 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
   }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3) !important;
+    color: white !important;
+    border-color: rgba(0, 123, 255, 0.3) !important;
+  }
+
   .btn-primary:hover {
-    background-color: var(--color-muted);
-    border-color: var(--color-primary-dark);
+    background: linear-gradient(135deg, #0056b3, #004085) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4) !important;
+    border-color: rgba(0, 123, 255, 0.6) !important;
+  }
+
+  .btn-secondary {
+    background: linear-gradient(135deg, #6c757d, #545b62) !important;
+    color: white !important;
+    border-color: rgba(108, 117, 125, 0.3) !important;
+  }
+
+  .btn-secondary:hover {
+    background: linear-gradient(135deg, #545b62, #383d41) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(108, 117, 125, 0.4) !important;
+    border-color: rgba(108, 117, 125, 0.6) !important;
+  }
+
+  .btn-outline-light {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+  }
+
+  .btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.6) !important;
+  }
+
+  .btn-outline-info {
+    background: rgba(23, 162, 184, 0.1) !important;
+    color: #17a2b8 !important;
+    border-color: rgba(23, 162, 184, 0.3) !important;
+  }
+
+  .btn-outline-info:hover {
+    background: linear-gradient(135deg, #17a2b8, #138496) !important;
+    color: white !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(23, 162, 184, 0.4) !important;
+    border-color: rgba(23, 162, 184, 0.6) !important;
+  }
+
+  /* Efectos para iconos dentro de botones */
+  .btn i,
+  .btn svg {
+    transition: transform 0.3s ease !important;
+  }
+
+  .btn:hover i,
+  .btn:hover svg {
+    transform: scale(1.1) !important;
+  }
+
+  /* Contenedor de botones CTA */
+  .cta-wrap {
+    gap: 15px !important;
+  }
+
+  /* Badges de tecnologías mejorados */
+  .badge {
+    background: rgba(255, 255, 255, 0.95) !important;
+    color: #2c3e50 !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 20px !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease !important;
+    backdrop-filter: blur(10px) !important;
+  }
+
+  .badge:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+    background: rgba(255, 255, 255, 1) !important;
+  }
+
+  /* Badge de disponibilidad */
+  .badge.bg-success {
+    background: linear-gradient(135deg, #28a745, #20c997) !important;
+    color: white !important;
+    border-color: rgba(40, 167, 69, 0.3) !important;
+  }
+
+  .badge.bg-success:hover {
+    background: linear-gradient(135deg, #20c997, #17a2b8) !important;
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4) !important;
+  }
+
+  /* Contenedor de tecnologías */
+  .tecnologies {
+    gap: 12px !important;
+  }
+
+  .tecnologies .badge {
+    font-size: 0.85rem !important;
+    padding: 8px 16px !important;
+  }
+
+  /* Responsive para botones, badges y layout general */
+  @media (max-width: 767.98px) {
+    .cta-wrap {
+      justify-content: center !important;
+      gap: 12px !important;
+    }
+    
+    .btn {
+      padding: 10px 18px !important;
+      font-size: 14px !important;
+      min-width: 140px !important;
+    }
+
+    .tecnologies {
+      justify-content: center !important;
+      gap: 8px !important;
+    }
+
+    .tecnologies .badge {
+      font-size: 0.8rem !important;
+      padding: 6px 12px !important;
+    }
+
+    /* Ajuste para el spacing en móvil */
+    .container {
+      padding: 0 20px !important;
+    }
+
+    /* Consistencia en títulos de sección */
+    .about-section .container,
+    .skills-container .container,
+    .project-section .container,
+    .contact-container .container {
+      padding: 0 20px !important;
+    }
+
+    /* About section responsive padding */
+    .about-section {
+      padding: 15px !important;
+    }
+
+    /* Imagen de perfil responsive */
+    .profile-img {
+      max-width: 220px !important;
+      height: 220px !important;
+    }
+
+    /* Título responsive */
+    h1 {
+      font-size: 2rem !important;
+    }
+
+    /* Social sidebar responsive */
+    .with-social-bottom {
+      padding-bottom: 90px; /* Altura ajustada para la nueva barra glassmorphism */
+    }
+    
+    .social-sidebar-mobile {
+      width: 100vw;
+      padding: 0;
+    }
+    
+    .social-mobile-container {
+      margin: 0 20px 20px 20px;
+    }
+    
+    .social-link i,
+    .social-link-mobile i {
+      font-size: 20px; 
+    }
+
+    .social-link,
+    .social-link-mobile {
+      padding: 10px;
+    }
+
+    footer {
+      margin-bottom: 100px; /* Espacio adicional para la barra glassmorphism */
+    }
+
+    /* Ocultar tooltips en móvil */
+    .social-link::before,
+    .social-link::after {
+      display: none;
+    }
   }
   
   /* Cards */
@@ -89,7 +292,7 @@ html{
     color: var(--color-accent) !important;
   }
 
-  .home-section , .about-section, .skills-container , .project-section, .contact-container{
+  .home-section , .about-section, .skills-container , .project-section, .contact-container, .footer-section{
    background-color: var(--color-dark) !important;
     border-radius: 12px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.15) inset; /* sombra suave */
@@ -98,55 +301,132 @@ html{
   .about-section{
     padding: 30px;
   }
+
   .social-sidebar {
     z-index: 1000;
+    margin-left: 15px;
+  }
+
+  /* Contenedor glassmorphism para escritorio */
+  .social-container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    padding: 15px 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: all 0.3s ease;
+  }
+
+  .social-container:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Contenedor glassmorphism para móvil */
+  .social-mobile-container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    padding: 12px 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    display: flex;
+    gap: 20px;
+    margin: 0 15px 15px 15px;
   }
 
  
   
-  .social-sidebar a,
-  .social-sidebar-mobile a {
-    color: #ffffffcc;
+  .social-link,
+  .social-link-mobile {
+    color: #ffffff;
     text-decoration: none;
-    transition: all 0.3s ease;
-    padding: 20px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 12px;
+    border-radius: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
    
   }
-  
-  .social-sidebar a:hover,
-  .social-sidebar-mobile a:hover {
-    color: var(--color-accent);
-    transform: scale(1.2);
-  }
-  
-  .social-sidebar i,
-  .social-sidebar-mobile i {
-    font-size: 50px;
-    transition: transform 0.3s ease;
-  }
-  
-  .social-sidebar i:hover,
-  .social-sidebar-mobile i:hover {
-    transform: translateY(-4px);
-  }
-  
-  @media (max-width: 767.98px) {
-    .with-social-bottom {
-      padding-bottom: 60px; /* Altura similar a la barra fija */
-      
-    }
-    .social-sidebar-mobile   {
-      width: 100vw;
-    
-    }
-    .social-sidebar i,
-    .social-sidebar-mobile i {
-      font-size: 30px; 
-    }
 
-    footer{
-      margin-bottom: 40px;
-    }
+  /* Tooltips para desktop */
+  .social-link::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 120%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 1001;
+  }
+
+  .social-link::after {
+    content: '';
+    position: absolute;
+    left: 115%;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 6px solid transparent;
+    border-right-color: rgba(0, 0, 0, 0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  .social-link:hover::before,
+  .social-link:hover::after {
+    opacity: 1;
+  }
+  
+  .social-link:hover,
+  .social-link-mobile:hover {
+    color: var(--color-accent);
+    transform: translateY(-4px) scale(1.1);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+  }
+  
+  .social-link i,
+  .social-link-mobile i {
+    font-size: 24px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .social-link:hover i,
+  .social-link-mobile:hover i {
+    transform: scale(1.2);
+    filter: drop-shadow(0 4px 8px rgba(0, 123, 255, 0.4));
+  }
+
+  /* Efectos específicos por red social */
+  .social-link:nth-child(1):hover {
+    box-shadow: 0 8px 25px rgba(0, 119, 181, 0.4);
+  }
+
+  .social-link:nth-child(2):hover {
+    box-shadow: 0 8px 25px rgba(88, 166, 255, 0.4);
+  }
+
+  .social-link:nth-child(3):hover {
+    box-shadow: 0 8px 25px rgba(220, 53, 69, 0.4);
   }
   
   .collapsible-section {

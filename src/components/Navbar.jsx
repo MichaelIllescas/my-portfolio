@@ -3,6 +3,7 @@ import logo from "../assets/img/logo.png";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("inicio");
 
   const handleNavLinkClick = (sectionId) => {
     const navbar = document.getElementById("navbarNav");
@@ -30,9 +31,24 @@ function Navbar() {
     }
   };
 
-  // Detectar scroll para cambiar el estilo del nav
+  // Detectar scroll para cambiar el estilo del nav y sección activa
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 50);
+      
+      // Detectar sección activa
+      const sections = ["inicio", "sobre-mi", "proyectos", "habilidades", "contacto"];
+      const scrollPosition = window.scrollY + 100;
+      
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i]);
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(sections[i]);
+          break;
+        }
+      }
+    };
+    
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -88,7 +104,7 @@ function Navbar() {
             {navItems.map((item) => (
               <li className="nav-item" key={item.id}>
                 <span
-                  className="nav-link nav-hover"
+                  className={`nav-link nav-hover ${activeSection === item.id ? 'active-nav' : ''}`}
                   role="button"
                   onClick={() => handleNavLinkClick(item.id)}
                 >
@@ -102,57 +118,104 @@ function Navbar() {
 
       {/* CSS extra */}
       <style>{`
+        /* Navbar con backdrop blur */
+        .navbar.navbar-dark.bg-dark {
+          background-color: rgba(33, 37, 41, 0.95) !important;
+          backdrop-filter: blur(10px);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
         /* Hover animado en links */
         .nav-hover {
           position: relative;
-          transition: color 0.3s ease;
+          transition: all 0.3s ease;
+          font-weight: 500;
+          color: rgba(255, 255, 255, 0.8) !important;
         }
+        
         .nav-hover::after {
           content: "";
           position: absolute;
-          bottom: 0;
-          left: 0;
+          bottom: -2px;
+          left: 50%;
           width: 0%;
           height: 2px;
-          background-color: #0d6efd;
-          transition: width 0.3s ease;
+          background: linear-gradient(90deg, #61dbfb, #0d6efd);
+          transition: all 0.3s ease;
+          transform: translateX(-50%);
+          border-radius: 1px;
         }
+        
+        .nav-hover:hover {
+          color: #ffffff !important;
+          transform: translateY(-1px);
+        }
+        
         .nav-hover:hover::after {
           width: 100%;
         }
 
-        /* Logo hover */
+        /* Estilo para sección activa */
+        .active-nav {
+          color: #61dbfb !important;
+          font-weight: 600;
+        }
+        
+        .active-nav::after {
+          width: 100% !important;
+          background: #61dbfb !important;
+        }
+
+        /* Logo mejorado */
         .navbar-brand img {
-          transition: transform 0.3s ease;
+          transition: all 0.3s ease;
+          filter: brightness(1.1);
         }
         .navbar-brand img:hover {
           transform: scale(1.05);
+          filter: brightness(1.3);
         }
 
-        /* Responsive ajustes */
+        /* Mejoras responsive */
         @media (max-width: 768px) {
           .navbar .logo {
-            height: 45px !important; /* logo más chico en mobile */
+            height: 50px !important;
           }
           .navbar {
-            padding-top: 0.3rem !important;
-            padding-bottom: 0.3rem !important;
+            padding: 0.5rem 0 !important;
           }
           .navbar-nav .nav-link {
-            padding: 0.7rem 0;
-            font-size: 1rem;
+            padding: 0.8rem 0;
+            font-size: 1.1rem;
             text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          }
+          .navbar-nav .nav-link:last-child {
+            border-bottom: none;
           }
           .navbar-collapse {
-            background-color: #212529; /* fondo sólido en mobile */
-            border-radius: 0 0 10px 10px;
-            padding: 0.5rem 0;
+            background: linear-gradient(180deg, rgba(33, 37, 41, 0.98), rgba(33, 37, 41, 0.95));
+            backdrop-filter: blur(15px);
+            border-radius: 0 0 15px 15px;
+            padding: 1rem 0;
+            margin-top: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: none;
+          }
+          .nav-hover::after {
+            bottom: 0;
+            height: 1px;
           }
         }
 
-        /* Ajuste de scroll para secciones */
+        /* Ajuste de scroll mejorado */
         section {
-          scroll-margin-top: 90px; /* evita que el navbar tape contenido */
+          scroll-margin-top: 85px;
+        }
+        
+        /* Animación suave del navbar */
+        .navbar {
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
       `}</style>
     </nav>
