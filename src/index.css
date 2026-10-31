@@ -329,9 +329,9 @@ html{
 
   /* Contenedor glassmorphism para móvil */
   .social-mobile-container {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(19, 31, 59, 0.92);
     backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 25px;
     padding: 12px 20px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
