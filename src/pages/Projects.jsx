@@ -132,8 +132,8 @@ const Projects = () => {
               </div>
               <div className="col-4">
                 <div className="stat-card p-3">
-                  <h3 style={{color: "#ffc107"}}>100%</h3>
-                  <small style={{color: "#d1d5db"}}>Full Stack</small>
+                  <h3 style={{color: "#ffc107"}}>+2</h3>
+                  <small style={{color: "#d1d5db"}}>Años freelance</small>
                 </div>
               </div>
             </div>

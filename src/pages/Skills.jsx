@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaServer, FaLaptopCode, FaCogs } from "react-icons/fa";
 import springSecurityLogo from "../assets/img/tecnologies-logos/spring-security.svg";
 
 // --- Datos de tecnologías (idénticos a los tuyos, se pueden extender) ---
@@ -67,7 +68,7 @@ const technologies = {
   frontend: {
     title: "🎨 Frontend moderno",
     description:
-      "SPA responsivas con React, componentes reutilizables, hooks personalizados y consumo de APIs. Estilado con Bootstrap y CSS Grid para lograr interfaces profesionales y adaptativas.",
+      "SPA responsivas con React y Angular, componentes reutilizables, hooks personalizados y consumo de APIs. Estilado con Bootstrap y CSS Grid para lograr interfaces profesionales y adaptativas.",
     items: [
       {
         name: "HTML5",
@@ -102,6 +103,14 @@ const technologies = {
         link: "https://reactjs.org/",
       },
       {
+        name: "Angular",
+        svg: (
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
+            alt="Angular" style={{ width: "32px", height: "32px" }} />
+        ),
+        link: "https://angular.dev/",
+      },
+      {
         name: "Bootstrap",
         svg: (
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
@@ -110,12 +119,12 @@ const technologies = {
         link: "https://getbootstrap.com/",
       },
       {
-        name: "Axios",
+        name: "Tailwind CSS",
         svg: (
-          <img src="https://axios-http.com/assets/logo.svg"
-            alt="Axios" style={{ width: "32px", height: "32px" }} />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+            alt="Tailwind CSS" style={{ width: "32px", height: "32px" }} />
         ),
-        link: "https://axios-http.com/",
+        link: "https://tailwindcss.com/",
       },
     ],
   },
@@ -185,7 +194,7 @@ export default function SkillsPage() {
                   onClick={() => setActiveCategory(key)}
                 >
                   <span className="nav-icon">
-                    {key === 'backend' ? '⚡' : key === 'frontend' ? '🎨' : '🔧'}
+                    {key === 'backend' ? <FaServer /> : key === 'frontend' ? <FaLaptopCode /> : <FaCogs />}
                   </span>
                   <span className="nav-text">
                     {key === 'backend' ? 'Backend' : key === 'frontend' ? 'Frontend' : 'DevOps'}
