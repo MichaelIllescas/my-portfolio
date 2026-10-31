@@ -1,6 +1,6 @@
-import fotoPerfil from "../assets/img/img-generic.jpg";
-import cv from "../assets/cv/Michael_Illescas_CV_FullStack_Developer2025.pdf";
-import { FaGithub, FaLinkedin, FaJava, FaReact } from "react-icons/fa";
+import fotoPerfil from "../assets/img/foto-michael-hero.jpg";
+import cv from "../assets/cv/CV_Michael_Illescas_FullStack_2026.pdf";
+import { FaGithub, FaLinkedin, FaJava, FaReact, FaAngular } from "react-icons/fa";
 import { SiSpringboot, SiDocker } from "react-icons/si";
 import { FaRocket, FaFileAlt } from "react-icons/fa";
 
@@ -8,7 +8,6 @@ function Home() {
   return (
     <section
       className="d-flex align-items-center py-5 px-3 home-section pt-1 section-home"
-      data-aos="fade-left"
     >
       <div className="container py-4">
         <div className="row align-items-center mt-5">
@@ -63,7 +62,7 @@ function Home() {
                 lineHeight: "1.4",
               }}
             >
-              Full Stack Developer especializado en Java & React
+              Full Stack Developer · Founder de QRest
             </h2>
 
             <p
@@ -74,10 +73,11 @@ function Home() {
                 lineHeight: "1.6",
               }}
             >
-              Desarrollo aplicaciones web completas con{" "}
-              <strong>Java + Spring Boot</strong> en el backend y{" "}
-              <strong>React</strong> en el frontend. Enfocado en código limpio y
-              soluciones escalables.
+              Construyo aplicaciones web seguras y escalables con{" "}
+              <strong>Java + Spring Boot</strong> y <strong>React/Angular</strong>, y
+              las despliego yo mismo en producción. Fundador de{" "}
+              <strong>QRest</strong> (SaaS con clientes activos) y desarrollador
+              independiente bajo <strong>Imperial Net</strong>.
             </p>
 
             {/* Badges de tecnologías */}
@@ -99,6 +99,12 @@ function Home() {
                 style={{ fontSize: "0.9rem", padding: "0.5rem 1rem" }}
               >
                 <FaReact color="#61dbfb" size={16} /> React
+              </span>
+              <span
+                className="badge bg-light text-dark d-flex align-items-center gap-2"
+                style={{ fontSize: "0.9rem", padding: "0.5rem 1rem" }}
+              >
+                <FaAngular color="#dd0031" size={16} /> Angular
               </span>
               <span
                 className="badge bg-light text-dark d-flex align-items-center gap-2"
