@@ -20,21 +20,34 @@ function About() {
       {/* Contenido principal en dos columnas más elegante */}
       <div className="container">
         <div className="row mb-5" data-aos="fade-left">
-        <div className="col-lg-6 mb-4">
+        <div className="col-lg-6 mb-4 mb-lg-0">
           <div className="about-card p-4 h-100">
             <h3 className="mb-4" style={{color: "#61dbfb"}}>Mi Historia</h3>
             <p className="mb-4" style={{color: "#d1d5db", lineHeight: "1.7"}}>
-              Soy <strong style={{color: "#ffffff"}}>Michael Jonathan Illescas</strong>, un desarrollador full stack 
-              que encontró en la programación una forma de resolver problemas reales. 
+              Soy <strong style={{color: "#ffffff"}}>Michael Jonathan Illescas</strong>, desarrollador full stack
+              con una historia poco común: pasé <strong style={{color: "#ffffff"}}>12 años como oficial de la
+              Policía de Buenos Aires</strong>, coordinando equipos y tomando decisiones de alta responsabilidad
+              bajo presión. Ahí aprendí a resolver problemas reales con criterio y método.
             </p>
             <p className="mb-4" style={{color: "#d1d5db", lineHeight: "1.7"}}>
-              Mi experiencia abarca desde <strong style={{color: "#ffffff"}}>sistemas ERP</strong> hasta 
-              <strong style={{color: "#ffffff"}}> aplicaciones web modernas</strong>, siempre enfocándome en 
-              código limpio y arquitecturas escalables.
+              Descubrí en la programación una nueva forma de hacer lo mismo: entender una necesidad y construir
+              la solución. Trasladé esa disciplina al software y hoy desarrollo aplicaciones web seguras y
+              escalables con <strong style={{color: "#ffffff"}}>Java + Spring Boot</strong> y
+              <strong style={{color: "#ffffff"}}> React/Angular</strong>, aplicando arquitectura hexagonal, SOLID
+              y Clean Code, y las despliego yo mismo en
+              <strong style={{color: "#ffffff"}}> VPS Linux con Docker y Nginx</strong>.
             </p>
             <p style={{color: "#d1d5db", lineHeight: "1.7"}}>
-              Actualmente perfecciono mis habilidades en <strong style={{color: "#ffffff"}}>seguridad informática</strong> 
-              y <strong style={{color: "#ffffff"}}>inglés técnico</strong> para ampliar mis horizontes profesionales.
+              Soy <strong style={{color: "#ffffff"}}>fundador de QRest</strong>, una plataforma SaaS para
+              gastronomía que ya tiene clientes activos, y trabajo de forma independiente bajo mi marca{" "}
+              <a
+                href="https://imperial-net.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{color: "#ffffff", textDecoration: "underline"}}
+              >
+                <strong>Imperial Net</strong>
+              </a>, desarrollando sistemas a medida para PyMEs e instituciones.
             </p>
           </div>
         </div>
@@ -48,18 +61,20 @@ function About() {
               <div className="d-flex flex-wrap gap-2 mb-3">
                 <span className="tech-badge">Java & Spring Boot</span>
                 <span className="tech-badge">React & JavaScript</span>
+                <span className="tech-badge">Angular</span>
                 <span className="tech-badge">Bases de Datos</span>
                 <span className="tech-badge">Git & DevOps</span>
+                <span className="tech-badge">Docker, Linux & Nginx (VPS)</span>
               </div>
             </div>
 
             <div className="mb-4">
               <h5 style={{color: "#ffffff"}}>Proyectos destacados</h5>
               <ul className="custom-list" style={{color: "#d1d5db"}}>
-                <li>ERP completo para gestión empresarial</li>
-                <li>Sistemas de reservas online</li>
-                <li>Aplicaciones administrativas</li>
-                <li>Portales institucionales</li>
+                <li>QRest — SaaS de gestión gastronómica</li>
+                <li>ERP Coblan — gestión administrativa</li>
+                <li>Inventiory — ERP para PyMEs</li>
+                <li>SDRP — sistema de registro (sector público)</li>
               </ul>
             </div>
 
