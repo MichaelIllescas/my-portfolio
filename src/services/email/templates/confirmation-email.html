@@ -3,35 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mensaje recibido - {{APP_NAME}}</title>
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>Recibí tu mensaje - {{COMPANY}}</title>
 </head>
-<body style="margin: 0; padding: 0; font-family: Arial, sans-serif;">
-    <div style="max-width: 600px; margin: 0 auto; padding: 20px; background: #1a1a2e;">
-        <div style="background: #16213e; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
-            <h2 style="color: #61dbfb; text-align: center; margin: 0 0 20px 0;">¡Gracias por contactarme!</h2>
-            
-            <p style="color: #e0e0e0; line-height: 1.6;">Hola <strong style="color: #61dbfb;">{{CLIENT_NAME}}</strong>,</p>
-            
-            <p style="color: #e0e0e0; line-height: 1.6;">Recibí tu mensaje correctamente. Te responderé a la brevedad posible.</p>
-            
-            <div style="background: #0f3460; padding: 20px; border-radius: 8px; border-left: 4px solid #61dbfb; margin: 20px 0;">
-                <p style="color: #61dbfb; font-weight: bold; margin: 0 0 10px 0;">¿Qué sigue?</p>
-                <ul style="color: #e0e0e0; line-height: 1.8; margin: 0; padding-left: 20px;">
-                    <li>📋 Revisaré tu mensaje en detalle</li>
-                    <li>📧 Te responderé en las próximas 24-48 horas</li>
-                    <li>💡 Evaluaremos juntos la mejor solución para tu proyecto</li>
-                </ul>
-            </div>
-            
-            <p style="text-align: center; color: #61dbfb; font-style: italic; margin: 30px 0; font-size: 16px;">
-                "{{TAGLINE}}"
-            </p>
-            
-            <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #0f3460; font-size: 12px; color: #a0a0a0;">
-                <p style="margin: 0 0 5px 0;"><strong style="color: #61dbfb;">{{APP_NAME}}</strong><br>
-                {{COMPANY}}</p>
-            </div>
-        </div>
-    </div>
+<body style="margin: 0; padding: 0; background-color: #f3f4f6;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f3f4f6" style="background-color: #f3f4f6;">
+        <tr>
+            <td align="center" style="padding: 32px 16px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="max-width: 560px; background-color: #ffffff; border: 1px solid #e5e7eb; font-family: Arial, Helvetica, sans-serif;">
+                    <tr>
+                        <td style="padding: 32px;">
+                            <p style="margin: 0 0 16px 0; font-size: 16px; line-height: 25px; color: #111827;">Hola {{CLIENT_NAME}},</p>
+                            <p style="margin: 0 0 16px 0; font-size: 16px; line-height: 25px; color: #111827;">Recibí tu mensaje, gracias por escribirme. Lo voy a leer con atención y te respondo en las próximas 24 a 48 horas.</p>
+                            <p style="margin: 0 0 24px 0; font-size: 16px; line-height: 25px; color: #111827;">Saludos,</p>
+                            <p style="margin: 0; font-size: 16px; line-height: 24px; font-weight: bold; color: #111827;">Michael Illescas</p>
+                            <p style="margin: 0; font-size: 14px; line-height: 22px; color: #6b7280;">{{COMPANY}}</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>

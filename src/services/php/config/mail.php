@@ -76,12 +76,12 @@ return [
     // Plantillas de email
     'templates' => [
         'consultation' => [
-            'subject' => '🔔 Nuevo mensaje de contacto - {firstName} {lastName}',
+            'subject' => 'Nuevo mensaje de {firstName} {lastName}',
             'html_template' => 'consultation.html',
             'text_template' => 'consultation.txt',
         ],
         'confirmation' => [
-            'subject' => '✅ Mensaje recibido - MJI Software Developer',
+            'subject' => 'Recibí tu mensaje',
             'html_template' => 'confirmation.html',
             'text_template' => 'confirmation.txt',
         ],

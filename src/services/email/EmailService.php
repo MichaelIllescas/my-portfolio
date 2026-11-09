@@ -74,7 +74,7 @@ class EmailService {
             '{{COMPANY}}' => $this->appConfig['company'],
             '{{TAGLINE}}' => $this->appConfig['tagline'],
             '{{PARTNER}}' => $this->appConfig['partner'],
-            '{{CURRENT_DATE}}' => date('d \d\e F \d\e Y, H:i'),
+            '{{CURRENT_DATE}}' => $this->currentDateInSpanish(),
             '{{FIRST_NAME}}' => sanitizeHtml($data['firstName']),
             '{{LAST_NAME}}' => sanitizeHtml($data['lastName']),
             '{{EMAIL}}' => sanitizeHtml($data['email']),
@@ -95,14 +95,14 @@ class EmailService {
         // Sección adicional (opcional)
         if (($data['hasAdditionalFields'] ?? 'false') === 'true' && !empty($data['additionalData'])) {
             $additionalSection = '<div style="background: #e8f5e8; border: 1px solid #4caf50; border-radius: 5px; padding: 20px; margin-top: 20px;">
-                <h3 style="color: #4caf50; font-size: 18px; margin: 0 0 15px 0; text-align: center;">📋 Información Adicional</h3>
+                <h3 style="color: #4caf50; font-size: 18px; margin: 0 0 15px 0; text-align: center;">Información Adicional</h3>
                 <div style="background: white; border-left: 4px solid #4caf50; padding: 15px; border-radius: 0 5px 5px 0;">
                     <p style="color: #333; font-size: 16px; margin: 0; line-height: 1.6;">' . sanitizeHtml($data['additionalData']) . '</p>
                 </div>';
             
             if ($data['hasDocument'] ?? false) {
                 $additionalSection .= '<div style="background: white; border-left: 4px solid #4caf50; padding: 15px; margin-top: 15px; border-radius: 0 5px 5px 0;">
-                    <p style="color: #4caf50; font-weight: bold; font-size: 14px; text-transform: uppercase; margin: 0 0 5px 0;">📎 Documento</p>
+                    <p style="color: #4caf50; font-weight: bold; font-size: 14px; text-transform: uppercase; margin: 0 0 5px 0;">Documento</p>
                     <p style="color: #333; font-size: 16px; margin: 0;">Ver archivo adjunto</p>
                 </div>';
             }
@@ -124,7 +124,7 @@ class EmailService {
      * @return string Texto plano del email
      */
     public function generatePlainTextEmail($data) {
-       $currentDate = date('d \d\e F \d\e Y, H:i');
+       $currentDate = $this->currentDateInSpanish();
         
         $text = "NUEVA CONSULTA - " . strtoupper($this->appConfig['name']) . "\n";
         $text .= "=====================================\n\n";
@@ -183,18 +183,23 @@ class EmailService {
      */
     public function generateConfirmationPlainText($clientName) {
         $text = "Hola {$clientName},\n\n";
-        $text .= "Recibimos tu consulta exitosamente y nuestro equipo se pondrá en contacto contigo a la brevedad.\n\n";
-        $text .= "¿Qué sigue?\n";
-        $text .= "- Revisaremos tu consulta en detalle\n";
-        $text .= "- Te contactaremos en las próximas 24-48 horas\n";
-        $text .= "- Te presentaremos las mejores opciones disponibles\n\n";
-        $text .= "\"{$this->appConfig['tagline']}\"\n\n";
-        $text .= "--\n{$this->appConfig['name']}\n";
-        $text .= "En colaboración con {$this->appConfig['partner']}";
-        
+        $text .= "Recibí tu mensaje, gracias por escribirme. Lo voy a leer con atención y te respondo en las próximas 24 a 48 horas.\n\n";
+        $text .= "Saludos,\n\n";
+        $text .= "Michael Illescas\n";
+        $text .= "{$this->appConfig['company']}";
+
         return $text;
     }
-    
+
+    private function currentDateInSpanish() {
+        return strtr(date('d \d\e F \d\e Y, H:i'), [
+            'January' => 'enero', 'February' => 'febrero', 'March' => 'marzo',
+            'April' => 'abril', 'May' => 'mayo', 'June' => 'junio',
+            'July' => 'julio', 'August' => 'agosto', 'September' => 'septiembre',
+            'October' => 'octubre', 'November' => 'noviembre', 'December' => 'diciembre',
+        ]);
+    }
+
     /**
      * Enviar email usando PHPMailer con SMTP
      * 

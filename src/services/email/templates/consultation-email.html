@@ -3,46 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuevo Mensaje - {{APP_NAME}}</title>
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>Nuevo mensaje - {{APP_NAME}}</title>
 </head>
-<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background: #1a1a2e;">
-    <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
-        <div style="background: #16213e; border-radius: 10px; padding: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
-            <h1 style="color: #61dbfb; margin: 0 0 10px 0; font-size: 28px;">💻 {{APP_NAME}}</h1>
-            <p style="color: #a0a0a0; margin: 0 0 5px 0;">Nuevo mensaje de contacto</p>
-            <p style="color: #a0a0a0; margin: 0 0 20px 0;"><strong>Fecha:</strong> {{CURRENT_DATE}}</p>
-            
-            <div style="background: #0f3460; border: 1px solid #61dbfb; border-radius: 5px; padding: 15px; margin-bottom: 20px; text-align: center;">
-                <p style="color: #61dbfb; font-weight: bold; margin: 0;">📬 Nuevo mensaje desde tu portfolio</p>
-            </div>
-            
-            <div style="margin-bottom: 20px;">
-                <div style="background: #0f3460; border-left: 4px solid #61dbfb; padding: 15px; margin-bottom: 15px; border-radius: 0 5px 5px 0;">
-                    <p style="color: #61dbfb; font-weight: bold; font-size: 14px; text-transform: uppercase; margin: 0 0 5px 0;">Nombre</p>
-                    <p style="color: #e0e0e0; font-size: 16px; margin: 0;">{{FIRST_NAME}} {{LAST_NAME}}</p>
-                </div>
-                
-                <div style="background: #0f3460; border-left: 4px solid #61dbfb; padding: 15px; margin-bottom: 15px; border-radius: 0 5px 5px 0;">
-                    <p style="color: #61dbfb; font-weight: bold; font-size: 14px; text-transform: uppercase; margin: 0 0 5px 0;">Email</p>
-                    <p style="color: #e0e0e0; font-size: 16px; margin: 0;"><a href="mailto:{{EMAIL}}" style="color: #61dbfb; text-decoration: none;">{{EMAIL}}</a></p>
-                </div>
-                
-                {{PHONE_SECTION}}
-                
-                <div style="background: #1a3a5c; border-left: 4px solid #ffc107; padding: 20px; margin: 20px 0; border-radius: 0 5px 5px 0;">
-                    <p style="color: #ffc107; font-weight: bold; font-size: 14px; text-transform: uppercase; margin: 0 0 10px 0;">📝 Mensaje</p>
-                    <p style="color: #e0e0e0; font-size: 16px; margin: 0; line-height: 1.6;">{{MESSAGE}}</p>
-                </div>
-                
-                {{ADDITIONAL_SECTION}}
-            </div>
-            
-            <div style="text-align: center; padding-top: 20px; border-top: 1px solid #0f3460; color: #a0a0a0; font-size: 12px;">
-                <p style="margin: 0 0 5px 0;"><strong style="color: #61dbfb;">{{APP_NAME}}</strong> - {{COMPANY}}</p>
-                <p style="margin: 0 0 10px 0;">{{TAGLINE}}</p>
-                <p style="margin: 0; font-size: 10px;">Este email fue enviado desde el formulario de contacto de tu portfolio.</p>
-            </div>
-        </div>
-    </div>
+<body style="margin: 0; padding: 0; background-color: #f3f4f6;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f3f4f6" style="background-color: #f3f4f6;">
+        <tr>
+            <td align="center" style="padding: 32px 16px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="max-width: 560px; background-color: #ffffff; border: 1px solid #e5e7eb; font-family: Arial, Helvetica, sans-serif;">
+                    <tr>
+                        <td style="padding: 32px 32px 24px 32px; border-bottom: 1px solid #e5e7eb;">
+                            <p style="margin: 0 0 6px 0; font-size: 20px; line-height: 26px; font-weight: bold; color: #111827;">Nuevo mensaje desde el portfolio</p>
+                            <p style="margin: 0; font-size: 13px; line-height: 20px; color: #6b7280;">{{CURRENT_DATE}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 24px 32px 0 32px;">
+                            <p style="margin: 0 0 2px 0; font-size: 13px; line-height: 20px; color: #6b7280;">Nombre</p>
+                            <p style="margin: 0 0 16px 0; font-size: 16px; line-height: 24px; color: #111827;">{{FIRST_NAME}} {{LAST_NAME}}</p>
+                            <p style="margin: 0 0 2px 0; font-size: 13px; line-height: 20px; color: #6b7280;">Email</p>
+                            <p style="margin: 0 0 16px 0; font-size: 16px; line-height: 24px;"><a href="mailto:{{EMAIL}}" style="color: #0f766e; text-decoration: underline;">{{EMAIL}}</a></p>
+                            {{PHONE_SECTION}}
+                            <p style="margin: 0 0 2px 0; font-size: 13px; line-height: 20px; color: #6b7280;">Mensaje</p>
+                            <p style="margin: 0; font-size: 16px; line-height: 24px; color: #111827;">{{MESSAGE}}</p>
+                            {{ADDITIONAL_SECTION}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 28px 32px 32px 32px;">
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td bgcolor="#0f766e" style="background-color: #0f766e;">
+                                        <a href="mailto:{{EMAIL}}" style="display: inline-block; padding: 11px 22px; font-size: 15px; line-height: 20px; font-weight: bold; color: #ffffff; text-decoration: none;">Responder</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
