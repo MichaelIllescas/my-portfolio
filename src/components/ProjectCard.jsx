@@ -11,6 +11,7 @@ const ProjectCard = ({
   backendUrl,
   githubUrl,
   demoUrl,
+  websiteUrl,
   techList,
   isOpen,
   onToggle,
@@ -80,6 +81,11 @@ const ProjectCard = ({
               {demoUrl && (
                 <a href={demoUrl} target="_blank" rel="noopener noreferrer" className="project-link demo">
                   <FaExternalLinkAlt size={12} /> Demo
+                </a>
+              )}
+              {websiteUrl && (
+                <a href={websiteUrl} target="_blank" rel="noopener noreferrer" className="project-link demo">
+                  <FaGlobe size={14} /> Sitio web
                 </a>
               )}
             </div>

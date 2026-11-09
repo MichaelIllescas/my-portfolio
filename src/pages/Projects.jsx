@@ -19,11 +19,11 @@ const Projects = () => {
     {
       title: "QRest - Sistema de Gestión para Restaurantes",
       tag: "ERP",
-      date: "Diciembre 2025 - Febrero 2026",
+      date: "Diciembre 2025 - Actualidad",
       description:
-        "Sistema integral para la gestión de restaurantes. Incluye administración de mesas, pedidos en tiempo real, menú digital con QR, gestión de reservas, control de personal y reportes de ventas. Arquitectura moderna con API REST.",
+        "Plataforma SaaS para la gestión gastronómica. Incluye mesas y pedidos en tiempo real, menú digital con QR, pedidos online, venta rápida, portal de mozos, gastos y reportes de ventas.",
       image: qrestImage,
-      githubUrl: "https://github.com/MichaelIllescas/Qrest",
+      websiteUrl: "https://qrest.com.ar/",
       techList: ["React", "TypeScript", "Vite", "Java 21", "Spring Boot", "Spring Data JPA", "MySQL", "WebSocket", "Swagger", "Git", "GitHub"],
     },
     {
@@ -31,10 +31,9 @@ const Projects = () => {
       tag: "ERP",
       date: "Abril - Mayo 2025",
       description:
-        "Aplicación web modular para la gestión administrativa de la empresa Coblan. Incluye gestión de empleados, clientes, contrataciones, horas trabajadas, pagos de salarios y reportes financieros. Desarrollada siguiendo SOLID, DDD y arquitectura en capas.",
+        "Sistema administrativo para empresas de servicios facturados por hora. Centraliza clientes, empleados y contrataciones con cronograma, genera y confirma las horas de cada mes, y administra gastos, sueldos, comprobantes en PDF y reportes financieros. Arquitectura modular organizada por casos de uso.",
       image: coblanAdmin,
-      frontendUrl: "https://github.com/MichaelIllescas/coblan-system-admin-fronted",
-      backendUrl: "https://github.com/MichaelIllescas/coblan-system-admin-backend",
+      githubUrl: "https://github.com/MichaelIllescas/coblan-system",
       techList: ["React", "Bootstrap", "Java", "Spring Boot", "Spring Security", "JWT", "MySQL", "Git", "GitHub"],
     },
     {
@@ -42,21 +41,19 @@ const Projects = () => {
       tag: "ERP",
       date: "Enero - Marzo 2025",
       description:
-        "ERP web para PyMEs que permite gestionar productos, proveedores, clientes, ventas y facturación. Incluye reportes de rentabilidad y dashboards claros para la toma de decisiones.",
+        "ERP web para PyMEs que gestiona productos, proveedores, clientes, compras, ventas, presupuestos y cuentas corrientes, con reportes de rentabilidad y dashboards para la toma de decisiones.",
       image: dashboardinventioryapp,
-      frontendUrl: "https://github.com/MichaelIllescas/inventiory-frontend",
-      backendUrl: "https://github.com/MichaelIllescas/inventiory-backend",
+      githubUrl: "https://github.com/MichaelIllescas/inventiory",
       techList: ["React", "Java", "Spring Boot", "Spring Security", "JWT", "MySQL", "Git", "GitHub", "Gitflow"],
     },
     {
-      title: "El Ceibo App",
+      title: "Club Manager",
       tag: "Sistema Interno",
       date: "Enero - Febrero 2025",
       description:
-        "Sistema administrativo para socios y jugadores del club El Ceibo. Permite gestionar pagos, reportes de ingresos y comprobantes. Optimizado para móviles.",
+        "Sistema web para la administración de clubes deportivos. Gestiona socios, jugadores por categoría, cuotas y pagos con comprobante en PDF, muestra quién pagó y quién debe cada mes, e incluye panel de recaudaciones, exportación a Excel y usuarios con roles.",
       image: dashboardelCeibo,
-      frontendUrl: "https://github.com/MichaelIllescas/el-ceibo-frontEnd",
-      backendUrl: "https://github.com/MichaelIllescas/inventiory-backend",
+      githubUrl: "https://github.com/MichaelIllescas/club-manager",
       techList: ["React", "Java", "Spring", "Spring Security", "JWT", "MySQL", "Git", "GitHub"],
     },
     {
@@ -74,9 +71,9 @@ const Projects = () => {
       tag: "ERP",
       date: "Junio - Julio 2024",
       description:
-        "Gestor de inventarios, clientes, ventas y reportes para una tienda de ropa.",
+        "Sistema de gestión de stock y ventas para comercios pequeños, con clientes, ajustes masivos de precios, informes y avisos de stock bajo.",
       image: dashboardinventiorystock,
-      githubUrl: "https://github.com/MichaelIllescas/Inventiory-Spring-Boot-Thymeleaf",
+      githubUrl: "https://github.com/MichaelIllescas/inventiory-thymeleaf",
       techList: ["Thymeleaf", "Java", "Spring Boot", "Spring Data JPA", "Spring Security", "JWT", "MySQL", "GitHub"],
     },
     {
