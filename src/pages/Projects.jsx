@@ -11,6 +11,7 @@ import coblanImage from "../assets/img/coblan-image.jpeg";
 import sdrp from "../assets/img/sdrp.jpeg";
 import coblanAdmin from "../assets/img/image-coblan-system-admin.png";
 import qrestImage from "../assets/img/qrest2.png";
+import esthetiadmin from "../assets/img/esthetiadmin.png";
 
 const Projects = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -25,6 +26,16 @@ const Projects = () => {
       image: qrestImage,
       websiteUrl: "https://qrest.com.ar/",
       techList: ["React", "TypeScript", "Vite", "Java 21", "Spring Boot", "Spring Data JPA", "MySQL", "WebSocket", "Swagger", "Git", "GitHub"],
+    },
+    {
+      title: "EsthetiAdmin - Gestión para Centros de Estética",
+      tag: "ERP",
+      date: "Noviembre 2026",
+      description:
+        "Sistema de gestión para centros de estética con agenda de turnos, página pública de reserva online sin registro, clientes, catálogo de servicios por categoría, registro de tratamientos, gastos y reportes financieros. Documentado con ADRs, migraciones Flyway y despliegue en Docker.",
+      image: esthetiadmin,
+      githubUrl: "https://github.com/MichaelIllescas/esthetiadmin",
+      techList: ["Angular", "TypeScript", "Java 25", "Spring Boot 4", "Spring Security", "JWT", "Flyway", "MySQL", "Docker", "Swagger", "Git", "GitHub"],
     },
     {
       title: "Coblan ERP Administrativo",
@@ -123,7 +134,7 @@ const Projects = () => {
               </div>
               <div className="col-4">
                 <div className="stat-card p-3">
-                  <h3 style={{color: "#28a745"}}>3</h3>
+                  <h3 style={{color: "#28a745"}}>4</h3>
                   <small style={{color: "#d1d5db"}}>ERPs</small>
                 </div>
               </div>
