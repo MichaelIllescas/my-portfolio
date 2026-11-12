@@ -12,6 +12,7 @@ import sdrp from "../assets/img/sdrp.jpeg";
 import coblanAdmin from "../assets/img/image-coblan-system-admin.png";
 import qrestImage from "../assets/img/qrest2.png";
 import esthetiadmin from "../assets/img/esthetiadmin.png";
+import docscan from "../assets/img/docscan.png";
 
 const Projects = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -26,6 +27,17 @@ const Projects = () => {
       image: qrestImage,
       websiteUrl: "https://qrest.com.ar/",
       techList: ["React", "TypeScript", "Vite", "Java 21", "Spring Boot", "Spring Data JPA", "MySQL", "WebSocket", "Swagger", "Git", "GitHub"],
+    },
+    {
+      title: "DocScan - Escáner de Documentos a PDF",
+      tag: "PWA",
+      date: "Noviembre 2026",
+      description:
+        "PWA para escanear documentos con la cámara del celular y exportarlos a PDF. Detecta los bordes y corrige la perspectiva con OpenCV en un Web Worker, aplica filtros, gestiona páginas y funciona 100% offline: todo se procesa en el dispositivo, sin servidor ni cuentas.",
+      image: docscan,
+      demoUrl: "https://docscan.imperial-net.com",
+      githubUrl: "https://github.com/MichaelIllescas/docscan",
+      techList: ["React", "TypeScript", "Vite", "Tailwind CSS", "PWA", "OpenCV.js", "WebAssembly", "pdf-lib", "IndexedDB", "Vitest", "Git", "GitHub"],
     },
     {
       title: "EsthetiAdmin - Gestión para Centros de Estética",
